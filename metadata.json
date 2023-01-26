@@ -1,0 +1,16 @@
+{
+    "id": "yamfinder",
+    "title": "CLDF dataset derived from Carroll et al. \"Yamfinder: The Southern New Guinea Lexical Database\"",
+    "description": null,
+    "license": "CC-BY-4.0",
+    "url": "http://yamfinder.com",
+    "citation": "Carroll, Matthew J., Barth, Wolfgang, Nicholas Evans, I Wayan Arka, Christian D\u00f6hler, Eri Kashima, Volker Gast, Tina Gregor, Kate L. Lindsey, Julia Miller, Emil Mittag, Bruno Olsson, Dineke Schokkin, Jeff Siegel, Charlotte van Tongeren, Kyla Quinn. [DATE ACCESSED]. Yamfinder: Southern New Guinea Lexical Database. Available online at: http://www.yamfinder.com",
+    "aboutUrl": null,
+    "conceptlist": [],
+    "lingpy_schema": null,
+    "derived_from": null,
+    "related": null,
+    "source": null,
+    "patron": null,
+    "version": "3.4.1.dev0"
+}

@@ -1,0 +1,150 @@
+{
+    "title": "CLDF dataset derived from Carroll et al. \"Yamfinder: The Southern New Guinea Lexical Database\"",
+    "access_right": "open",
+    "keywords": [
+        "cldf:Wordlist",
+        "linguistics"
+    ],
+    "creators": [
+        {
+            "name": "Matthew J. Carroll"
+        },
+        {
+            "name": "Wolfgang Barth"
+        },
+        {
+            "name": "Nicholas Evans"
+        },
+        {
+            "name": "I Wayan Arka"
+        },
+        {
+            "name": "Christian D\u00f6hler"
+        },
+        {
+            "name": "Eri Kashima"
+        },
+        {
+            "name": "Volker Gast"
+        },
+        {
+            "name": "Tina Gregor"
+        },
+        {
+            "name": "Kate L. Lindsey"
+        },
+        {
+            "name": "Julia Miller"
+        },
+        {
+            "name": "Emil Mittag"
+        },
+        {
+            "name": "Bruno Olsson"
+        },
+        {
+            "name": "Dineke Schokkin"
+        },
+        {
+            "name": "Jeff Siegel"
+        },
+        {
+            "name": "Charlotte van Tongeren"
+        },
+        {
+            "name": "Kyla Quinn"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Matthew J. Carroll",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Wolfgang Barth",
+            "type": "DataCurator"
+        },
+        {
+            "name": "Nicholas Evans",
+            "type": "DataCollector"
+        },
+        {
+            "name": "I Wayan Arka",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Christian D\u00f6hler",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Eri Kashima",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Volker Gast",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Tina Gregor",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Kate L. Lindsey",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Julia Miller",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Emil Mittag",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Bruno Olsson",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Dineke Schokkin",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Jeff Siegel",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Charlotte van Tongeren",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Kyla Quinn",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Don Daniels",
+            "type": "DataCollector"
+        },
+        {
+            "name": "Samuel Kirkpatrick",
+            "type": "Other"
+        },
+        {
+            "name": "Petra Gulicher",
+            "type": "Other"
+        },
+        {
+            "name": "Robert Forkel",
+            "type": "DataCurator"
+        }
+    ],
+    "communities": [
+        {
+            "identifier": "lexibank"
+        }
+    ],
+    "upload_type": "dataset",
+    "description": "<p>Cite the source of the dataset as:</p>\n\n<blockquote>\n<p>Carroll, Matthew J., Barth, Wolfgang, Nicholas Evans, I Wayan Arka, Christian D\u00f6hler, Eri Kashima, Volker Gast, Tina Gregor, Kate L. Lindsey, Julia Miller, Emil Mittag, Bruno Olsson, Dineke Schokkin, Jeff Siegel, Charlotte van Tongeren, Kyla Quinn. [DATE ACCESSED]. Yamfinder: Southern New Guinea Lexical Database. Available online at: http://www.yamfinder.com</p>\n</blockquote>",
+    "license": {
+        "id": "CC-BY-4.0"
+    }
+}
