@@ -24,11 +24,11 @@ Available online at http://yamfinder.com
 
 [![CLDF validation](https://github.com/lexibank/yamfinder/workflows/CLDF-validation/badge.svg)](https://github.com/lexibank/yamfinder/actions?query=workflow%3ACLDF-validation)
 ![Glottolog: 98%](https://img.shields.io/badge/Glottolog-98%25-green.svg "Glottolog: 98%")
-![Concepticon: 0%](https://img.shields.io/badge/Concepticon-0%25-red.svg "Concepticon: 0%")
+![Concepticon: 88%](https://img.shields.io/badge/Concepticon-88%25-yellowgreen.svg "Concepticon: 88%")
 ![Source: 97%](https://img.shields.io/badge/Source-97%25-green.svg "Source: 97%")
 
 - **Varieties:** 39 (linked to 34 different Glottocodes)
-- **Concepts:** 382 (linked to 0 different Concepticon concept sets)
+- **Concepts:** 382 (linked to 322 different Concepticon concept sets)
 - **Lexemes:** 12,267
 - **Sources:** 18
 - **Synonymy:** 1.06

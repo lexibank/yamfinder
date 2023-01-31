@@ -96,6 +96,7 @@ class Dataset(pylexibank.Dataset):
             data.append(item)
 
         args.writer.add_languages()
+        concepts = args.writer.add_concepts(lookup_factory=lambda c: slug(c.english))
         args.writer.add_sources(*self.etc_dir.read_bib())
         linguist2sources = {
             r['Linguist']: r['Sources'].split()
@@ -109,11 +110,6 @@ class Dataset(pylexibank.Dataset):
             if not gloss:
                 args.log.warning('{} items without gloss'.format(len(list(rows))))
                 continue
-            args.writer.add_concept(
-                ID=slug(gloss),
-                Name=gloss,
-                #Concepticon_ID=concept['CONCEPTICON_ID']
-            )
             for row in rows:
                 al = []
                 if row['Audio']:
@@ -128,7 +124,7 @@ class Dataset(pylexibank.Dataset):
                 form = row['Phonetic'] or row['Orthography'] or row['Phonemic']
                 lex = args.writer.add_form(
                     Language_ID=slug(row['Language']),
-                    Parameter_ID=slug(gloss),
+                    Parameter_ID=concepts[slug(gloss)],
                     Value=form,
                     Form=form,
                     Orthography=row['Orthography'],

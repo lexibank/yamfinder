@@ -8,7 +8,7 @@ cffi==1.15.1
 chardet==5.1.0
 cldfbench==1.13.0
 cldfcatalog==1.5.1
--e git+https://github.com/cldf/cldfviz@cba776022c12fca19f349905c89bef0fc9583de1#egg=cldfviz
+-e git+https://github.com/cldf/cldfviz@502c82edaab0c6f8617d561f2d1d351fd27b03ce#egg=cldfviz
 cldfzenodo==1.1.0
 clldutils==3.18.1
 colorama==0.4.6
@@ -77,5 +77,4 @@ uritemplate==4.1.1
 urllib3==1.26.14
 webencodings==0.5.1
 xlrd==2.0.1
-yattag==1.15.0
 zenodoclient==0.5.0
