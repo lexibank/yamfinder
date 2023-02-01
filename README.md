@@ -43,7 +43,7 @@ Available online at http://yamfinder.com
 
 Name | GitHub user | Role
 --- | --- | ---
-Matthew J. Carroll || DataCollector, author
+Mae Carroll || DataCollector, author
 Wolfgang Barth || DataCurator, author
 Nicholas Evans || DataCollector, author
 I Wayan Arka || DataCollector, author
