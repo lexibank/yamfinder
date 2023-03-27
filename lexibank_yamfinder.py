@@ -111,7 +111,10 @@ class Dataset(pylexibank.Dataset):
                 args.log.warning('{} items without gloss'.format(len(list(rows))))
                 continue
             for row in rows:
-                al = []
+                if slug(row['Language']) == 'prototonda':
+                    # Skip reconstructions.
+                    continue
+                al = None
                 if row['Audio']:
                     audio_id += 1
                     al = [audio_id]

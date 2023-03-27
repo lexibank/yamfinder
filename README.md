@@ -27,17 +27,17 @@ Available online at http://yamfinder.com
 ![Concepticon: 88%](https://img.shields.io/badge/Concepticon-88%25-yellowgreen.svg "Concepticon: 88%")
 ![Source: 97%](https://img.shields.io/badge/Source-97%25-green.svg "Source: 97%")
 
-- **Varieties:** 39 (linked to 34 different Glottocodes)
+- **Varieties:** 38 (linked to 33 different Glottocodes)
 - **Concepts:** 382 (linked to 322 different Concepticon concept sets)
-- **Lexemes:** 12,267
-- **Sources:** 18
+- **Lexemes:** 12,231
+- **Sources:** 17
 - **Synonymy:** 1.06
 
 ## Possible Improvements:
 
 
 
-- Entries missing sources: 330/12267 (2.69%)
+- Entries missing sources: 330/12231 (2.70%)
 
 # Contributors
 
