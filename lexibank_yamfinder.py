@@ -147,5 +147,3 @@ class Dataset(pylexibank.Dataset):
                     Source=linguist2sources.get(row['Linguist'], []),
                     Audio_Files=al,
                 )
-
-        self.dir.joinpath('NOTES.md').write_text('![languages](map.png)', encoding='utf8')
