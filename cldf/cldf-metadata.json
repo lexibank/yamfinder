@@ -14,7 +14,7 @@
         {
             "rdf:about": "https://github.com/lexibank/yamfinder",
             "rdf:type": "prov:Entity",
-            "dc:created": "6b87674",
+            "dc:created": "9ea3eef",
             "dc:title": "Repository"
         },
         {
@@ -289,7 +289,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#MediaTable",
-            "dc:extent": 1365,
+            "dc:extent": 1266,
             "tableSchema": {
                 "columns": [
                     {

@@ -5,7 +5,7 @@ cldfbench lexibank.makecldf lexibank_yamfinder.py --glottolog-version v5.0
 ```
 
 ```shell
-cldf validate cldf
+pytest
 ```
 
 ```shell

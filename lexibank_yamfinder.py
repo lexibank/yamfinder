@@ -3,6 +3,7 @@ import mimetypes
 import itertools
 from pathlib import Path
 
+from clldutils.path import md5
 from clldutils.misc import slug
 from csvw.dsv import UnicodeWriter
 import attr
@@ -72,7 +73,11 @@ class Dataset(pylexibank.Dataset):
 
     def audio_path(self, name):
         p = self.raw_dir / 'audiomp3' / name.replace('.wav', '.mp3')
-        return p if p.exists() else None
+        if p.exists():
+            t = self.cldf_dir / 'audio' / '{}.mp3'.format(md5(p))
+            if not t.exists():
+                shutil.copy(p, t)
+            return t
 
     def cmd_makecldf(self, args):
         """
@@ -108,7 +113,7 @@ class Dataset(pylexibank.Dataset):
             r['Linguist']: r['Sources'].split()
             for r in self.etc_dir.read_csv('sources.csv', dicts=True)}
 
-        audio_id = 0
+        md5s = set()
         for gloss, rows in itertools.groupby(
             sorted(data, key=lambda r: (r['Gloss'], r['Language'])),
             lambda r: r['Gloss'],
@@ -124,15 +129,15 @@ class Dataset(pylexibank.Dataset):
                 if row['Audio']:
                     audio_path = self.audio_path(row['Audio'])
                     if audio_path:
-                        shutil.copy(audio_path, self.cldf_dir / 'audio' / audio_path.name)
-                        audio_id += 1
-                        al = [audio_id]
-                        args.writer.objects['MediaTable'].append(dict(
-                            ID=str(audio_id),
-                            Name=row['Audio'],
-                            Media_Type=mimetypes.guess_type(row['Audio'])[0],
-                            Download_URL='audio/{}'.format(audio_path.name),
-                        ))
+                        al = [audio_path.stem]
+                        if audio_path.stem not in md5s:
+                            args.writer.objects['MediaTable'].append(dict(
+                                ID=audio_path.stem,
+                                Name=row['Audio'].replace('.wav', ''),
+                                Media_Type=mimetypes.guess_type(audio_path.name)[0],
+                                Download_URL='audio/{}'.format(audio_path.name),
+                            ))
+                            md5s.add(audio_path.stem)
                 form = row['Phonetic'] or row['Orthography'] or row['Phonemic']
                 lex = args.writer.add_form(
                     Language_ID=slug(row['Language']),
