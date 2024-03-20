@@ -17,5 +17,5 @@ cldfbench zenodo lexibank_yamfinder.py
 ```
 
 ```shell
-cldfbench cldfviz.map cldf --output map.svg --format svg --width 20 --height 10 --no-legend --with-ocean --padding-left 2 --padding-top 1 --padding-right 2 --padding-bottom 1 --language-labels --markersize 12
+cldfbench cldfviz.map cldf --output map.png --format png --width 20 --height 10 --no-legend --with-ocean --padding-left 2 --padding-top 1 --padding-right 2 --padding-bottom 1 --language-labels --markersize 12
 ```

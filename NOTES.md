@@ -1,6 +1,6 @@
 This dataset covers the following languages of Southern New Guinea:
 
-![languages](map.svg)
+![languages](map.png)
 
 
 ### Audio

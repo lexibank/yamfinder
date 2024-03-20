@@ -18,7 +18,7 @@ Available online at http://yamfinder.com
 
 This dataset covers the following languages of Southern New Guinea:
 
-![languages](map.svg)
+![languages](map.png)
 
 
 ### Audio
