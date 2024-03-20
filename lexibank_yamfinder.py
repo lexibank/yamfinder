@@ -1,7 +1,7 @@
+import shutil
 import mimetypes
 import itertools
 from pathlib import Path
-import urllib.parse
 
 from clldutils.misc import slug
 from csvw.dsv import UnicodeWriter
@@ -70,6 +70,10 @@ class Dataset(pylexibank.Dataset):
             for item in raw:
                 w.writerow([lookup[i] if isinstance(i, int) else i for i in item])
 
+    def audio_path(self, name):
+        p = self.raw_dir / 'audiomp3' / name.replace('.wav', '.mp3')
+        return p if p.exists() else None
+
     def cmd_makecldf(self, args):
         """
         Convert the raw data to a CLDF dataset.
@@ -78,6 +82,8 @@ class Dataset(pylexibank.Dataset):
         of this object to add data.
         """
         args.writer.cldf.add_component('MediaTable')
+        if not self.cldf_dir.joinpath('audio').exists():
+            self.cldf_dir.joinpath('audio').mkdir()
         data = []
         for item in self.raw_dir.read_csv('data.csv', dicts=True):
             item['Gloss'] = item['Gloss'].replace('ŋ', 'n').replace('ʊ', 'u')
@@ -86,7 +92,7 @@ class Dataset(pylexibank.Dataset):
                 item['Village'] = ''
             if not item['Linguist']:
                 if item['Language'] == 'Maklew':
-                    item['Linguist'] = 'Drabbe 1954'
+                    item['Linguist'] = 'Tina Gregor'
                 elif item['Language'] == 'Namna':
                     item['Linguist'] = 'Eri Kashima'
                 elif item['Language'] == 'Ngkolmpu':
@@ -112,18 +118,21 @@ class Dataset(pylexibank.Dataset):
                 continue
             for row in rows:
                 if slug(row['Language']) == 'prototonda':
-                    # Skip reconstructions.
+                    # Skip preliminary reconstructions.
                     continue
                 al = None
                 if row['Audio']:
-                    audio_id += 1
-                    al = [audio_id]
-                    args.writer.objects['MediaTable'].append(dict(
-                        ID=str(audio_id),
-                        Name=row['Audio'],
-                        Media_Type=mimetypes.guess_type(row['Audio'])[0],
-                        Download_URL='http://yamfinder.com/sounds/{}'.format(urllib.parse.quote(row['Audio']))
-                    ))
+                    audio_path = self.audio_path(row['Audio'])
+                    if audio_path:
+                        shutil.copy(audio_path, self.cldf_dir / 'audio' / audio_path.name)
+                        audio_id += 1
+                        al = [audio_id]
+                        args.writer.objects['MediaTable'].append(dict(
+                            ID=str(audio_id),
+                            Name=row['Audio'],
+                            Media_Type=mimetypes.guess_type(row['Audio'])[0],
+                            Download_URL='audio/{}'.format(audio_path.name),
+                        ))
                 form = row['Phonetic'] or row['Orthography'] or row['Phonemic']
                 lex = args.writer.add_form(
                     Language_ID=slug(row['Language']),
@@ -140,24 +149,3 @@ class Dataset(pylexibank.Dataset):
                 )
 
         self.dir.joinpath('NOTES.md').write_text('![languages](map.png)', encoding='utf8')
-
-    def cmd_readme(self, args):
-        import subprocess
-        from cldfbench.metadata import CONTRIBUTOR_TYPES
-        subprocess.check_call([
-            'cldfbench',
-            'cldfviz.map',
-            str(self.cldf_specs().metadata_path),
-            '--output', str(self.dir / 'map.png'),
-            '--width', '20',
-            '--height', '10',
-            '--format', 'png',
-            '--no-legend',
-            '--padding-left', '2',
-            '--padding-top', '1',
-            '--padding-right', '2',
-            '--padding-bottom', '1',
-            '--language-labels',
-            '--markersize', '15',
-        ])
-        return super().cmd_readme(args)

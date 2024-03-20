@@ -6,9 +6,9 @@ Cartopy==0.21.1
 certifi==2022.12.7
 cffi==1.15.1
 chardet==5.1.0
-cldfbench==1.13.0
+-e git+https://github.com/cldf/cldfbench@9ff9fe91331030309c53d55efc36f76deb516e0f#egg=cldfbench
 cldfcatalog==1.5.1
--e git+https://github.com/cldf/cldfviz@cc5879950a1abf0fd0397d4cf5d38956c756dab2#egg=cldfviz
+-e git+https://github.com/cldf/cldfviz@badaa8cf2dd74be5e3f3d36a56fbb78929a94d54#egg=cldfviz
 cldfzenodo==1.1.0
 clldutils==3.18.1
 colorama==0.4.6
@@ -34,7 +34,7 @@ matplotlib==3.6.3
 multipledispatch==0.6.0
 nameparser==1.1.2
 networkx==3.0
-newick==1.6.0
+newick==1.9.0
 numpy==1.24.1
 openpyxl==3.0.10
 packaging==23.0
@@ -51,7 +51,7 @@ pylatexenc==2.10
 pyparsing==3.0.9
 pyproj==3.4.1
 pyrsistent==0.19.3
-pytest==7.2.1
+pytest==7.4.0
 python-dateutil==2.8.2
 python-frontmatter==1.0.0
 python-nexus==2.9.0
